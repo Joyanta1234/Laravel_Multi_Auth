@@ -16,11 +16,14 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
+            $table->string('google_id')->nullable();
             $table->enum('role',['customer','admin'])->default('customer'); //Enum = enumeration. Enum is like an dropdown menu where it can only store one value from a list of predefined options. Means, as we have given default customer. It will select customer or admin and if the value is not given it will automatically select customer.
             $table->rememberToken();
             $table->timestamps();
         });
+
+        
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
@@ -36,6 +39,10 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
+
+        
+
+        
     }
 
     /**
@@ -48,3 +55,5 @@ return new class extends Migration
         Schema::dropIfExists('sessions');
     }
 };
+
+

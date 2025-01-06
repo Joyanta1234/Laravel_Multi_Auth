@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Laravel 11 Multi Auth</title>
         <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        
     </head>
     <body class="bg-light">
         <section class=" p-3 p-md-4 p-xl-5">
@@ -70,6 +72,18 @@
                                             <a href="{{route('account.register')}}" class="link-secondary text-decoration-none">Create new account</a>
                                         </div>
                                     </div>
+                                </div>
+                                <br>
+
+                                <div align="center">
+                                    <a href="{{route('google.login')}}">
+                                    
+                                    <button class="google-btn">
+                                    <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Logo">
+                                    <span>Continue with Google</span>
+                                    </button>
+
+                                    </a>
                                 </div>
                             </div>
                         </div>
